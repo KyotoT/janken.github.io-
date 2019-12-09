@@ -1,0 +1,105 @@
+@charset "utf-8";
+img {
+    width: 100%;
+}
+
+.main {
+    width: 100%;
+    height: 80px;
+    background-color: cornflowerblue;
+}
+
+.title {
+    color: cornsilk;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.text {
+    font-size: 2.3rem;
+    font-weight: bold;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+}
+
+.result {
+    width: 100%;
+    height: 500px;
+    text-align: center;
+}
+
+.result-img {
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.result-text {
+    font-size: 2.3rem;
+    font-weight: bold;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    /* .boxが「my-fade-in」で状態変化するように指定 */
+    animation-name:     my-fade-in;
+    animation-duration: 20s;
+}
+
+.my-hand {
+    width: 100%;
+    height: auto;
+}
+
+.hand-list {
+    display: flex;
+    justify-content: space-around;
+    border: solid 1px black;
+}
+
+.hand {
+    width: 200px;
+}
+
+.hand-img:hover {
+    opacity:0.5;
+    cursor: pointer;
+}
+
+.hand-img:active {
+    position: relative;
+	top: 3px;
+}
+
+/* スタイルの状態変化を「my-fade-in」という名前で定義 */
+@keyframes my-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  figure {
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+}  
+
+/* タブレット向けレイアウト */
+/* ブレイクポイントをmax-width: 1000pxに指定してください */
+@media(max-width: 1000px){
+    .result-img{
+      width: 30%;
+    }
+}
+    
+/* スマートフォン向けレイアウト */
+/* ブレイクポイントをmax-width: 670pxに指定してください */
+@media(max-width: 670px ){
+    .result-img{
+        width: 60%;
+    }
+}

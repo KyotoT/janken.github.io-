@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- リセットcss読み込み -->
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- style.css読み込み -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jquery読み込み -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <title>ジャンケンゲーム</title>
+</head>
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="【ページのURL】" data-text="じゃんけんゲームをシェアする" data-via="【ユーザ名】" data-size="【ボタンのサイズ】" data-related="【ユーザ名】" data-count="【カウント表示の種類】" data-hashtags="【ハッシュタグ】"></a> 
+
+<body>
+    <!-- タイトルエリア -->
+    <div class="main">
+        <h1 class="title">ジャンケンゲーム</h1>
+    </div>
+
+    <figure>
+        <figcaption>来週のサ●エさんは〜:</figcaption>
+        <audio
+            controls
+            src="port.mp3">
+                Your browser does not support the
+                <code>audio</code> element.
+        </audio>
+    </figure>
+
+    <!-- 結果表示エリア -->
+    <div class="result">
+       <h2 class="text">\\サ●エでございま〜す！//</h2>
+       <p id="sazae" class="result-img"><img src="images/sazae.jpg" alt=""></p>           
+       <div id="result-text" class="result-text">サ●エが出すのは</div>
+    </div>
+
+    <!-- 入力エリア -->
+    <div class="my-hand">
+        <ul class="hand-list">
+            <li id="gu" class="hand" value="1"><p><img class="hand-img" src="images/gu.png" alt=""></p></li>
+            <li id="choki" class="hand" value="2"><p><img class="hand-img" src="images/choki.png" alt=""></p></li>
+            <li id="pa" class="hand" value="3"><p><img class="hand-img" src="images/pa.png" alt=""></p></li>
+        </ul>
+    </div>
+
+    
+
+<!-- js -->
+<script>
+
+    //1 = グー, 2 = チョキ, 3 = パー
+    //グーボタンが押されたら動く処理
+    $("#gu").on("click",function(){
+
+    //ランダムな1~3の整数を生成する処理
+    let num = Math.ceil(Math.random()*3); 
+    console.log(num);
+
+    if (num == 1){
+        console.log('グー');         
+        $("#sazae").html('<img src="images/gu.png" alt="">');
+        $("#result-text").html('\\\\あいこでございま〜す！//');
+    } else if (num == 2){
+        console.log('チョキ');
+        $("#sazae").html('<img src="images/choki.png" alt="">');
+        $("#result-text").html('\\\\あなたの勝ちでございま〜す！//');
+    } else {
+        console.log('パー');
+        $("#sazae").html('<img src="images/pa.png" alt="">');
+        $("#result-text").html('\\\\あなたの負けでございま〜す！//');
+    }
+    });
+
+    //チョキボタンが押されたら動く処理
+    $("#choki").on("click",function(){
+
+    //ランダムな1~3の整数を生成する処理
+    let num = Math.ceil(Math.random()*3); 
+    console.log(num);
+
+    if (num == 1){
+        console.log('グー');
+        $("#sazae").html('<img src="images/gu.png" alt="">');         
+        $("#result-text").html('\\\\あなたの負けでございま〜す！//');
+    } else if (num == 2){
+        console.log('チョキ');
+        $("#sazae").html('<img src="images/choki.png" alt="">');
+        $("#result-text").html('\\\\あいこでございま〜す！//');
+    } else {
+        console.log('パー');
+        $("#sazae").html('<img src="images/pa.png" alt="">');
+        $("#result-text").html('\\\\あなたの勝ちでございま〜す！//');
+    }
+    });
+
+    //パーボタンが押されたら動く処理
+    $("#pa").on("click",function(){
+
+    //ランダムな1~3の整数を生成する処理
+    let num = Math.ceil(Math.random()*3); 
+    console.log(num);
+
+    if (num == 1){
+        console.log('グー');
+        $("#sazae").html('<img src="images/gu.png" alt="">');
+        $("#result-text").html('\\\\あなたの勝ちでございま〜す！//');
+    } else if (num == 2){
+        console.log('チョキ');
+        $("#sazae").html('<img src="images/choki.png" alt="">');
+        $("#result-text").html('\\\\あなたの負けでございま〜す！//');
+    } else {
+        console.log('パー');
+        $("#sazae").html('<img src="images/pa.png" alt="">');     
+        $("#result-text").html('\\\\あいこでございま〜す！//');
+    }
+    });
+
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+
+</script>
+
+
+</body>
+</html>
